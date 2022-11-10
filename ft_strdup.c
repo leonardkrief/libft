@@ -22,11 +22,6 @@ char	*ft_strdup(const char *s1)
 	while (s1[len])
 		len++;
 	cp = malloc(sizeof(*cp) * (len + 1));
-	if (!cp)
-	{
-		errno = ENOMEM;
-		return (NULL);
-	}
 	len = -1;
 	while (s1[++len])
 		cp[len] = s1[len];

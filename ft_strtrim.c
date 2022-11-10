@@ -12,6 +12,20 @@
 
 #include "libft.h"
 
+int	ft_belongs(char s1, char const *set)
+{
+	int	i;
+
+	i = 0;
+	while (set[i])
+	{
+		if (set[i] == s1)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
@@ -22,7 +36,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	len = ft_strlen(s1);
 	i = 0;
-	while (len - i - 1 >= 0 && ft_belongs(s1[len - i - 1], set))
+	while (len >= i + 1 && ft_belongs(s1[len - i - 1], set))
 		i++;
 	len -= i * (len > 0) + 0;
 	i = 0;
