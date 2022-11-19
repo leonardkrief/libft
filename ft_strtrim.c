@@ -5,28 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/25 02:15:04 by lkrief            #+#    #+#             */
-/*   Updated: 2022/09/25 02:15:30 by lkrief           ###   ########.fr       */
+/*   Created: 2022/11/19 20:52:44 by lkrief            #+#    #+#             */
+/*   Updated: 2022/11/19 21:10:17 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_belongs(char s1, char const *set)
-{
-	int	i;
-
-	i = 0;
-	while (set[i])
-	{
-		if (set[i] == s1)
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
 	size_t	i;
 	size_t	len;
@@ -36,18 +22,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	len = ft_strlen(s1);
 	i = 0;
-	while (len >= i + 1 && ft_belongs(s1[len - i - 1], set))
+	while (len >= i + 1 && ft_strchr(set, s1[len - i - 1]))
 		i++;
 	len -= i * (len > 0) + 0;
 	i = 0;
-	while (s1[i] && ft_belongs(s1[i], set))
+	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
 	len -= i * (len > 0) + 0;
 	dst = malloc(sizeof(*dst) * ((len > 0) * len + 1));
 	if (!dst)
 		return (NULL);
 	i = 0;
-	while (s1[i] && ft_belongs(s1[i], set))
+	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
 	dst[len++] = 0;
 	while (--len > 0)

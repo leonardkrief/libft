@@ -6,11 +6,11 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 02:10:14 by lkrief            #+#    #+#             */
-/*   Updated: 2022/09/25 02:10:19 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/11/19 20:24:13 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

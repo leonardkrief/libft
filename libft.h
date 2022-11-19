@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 01:50:07 by lkrief            #+#    #+#             */
-/*   Updated: 2022/09/25 01:52:38 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/11/19 20:53:36 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <errno.h>
+# include <string.h>
 
-/*****************/
-/****MANDATORY****/
-/*****************/
+/*********************/
+/******MANDATORY******/
+/*********************/
 
 int		ft_atoi(const char *str);
-int		ft_belongs(char s1, char const *set);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 int		ft_isalnum(int c);
@@ -57,9 +57,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 
-/*******************/
-/*******BONUS*******/
-/*******************/
+/*********************/
+/********BONUS********/
+/*********************/
 
 typedef struct s_list
 {
@@ -76,5 +76,7 @@ t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
+
+void	ft_lstprint(t_list *lst);
 
 #endif
